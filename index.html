@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
-  
+
     :root {
       --primary: #00e6e6;
       --primary-dark: #00b3b3;
@@ -59,6 +59,8 @@
       color: var(--text-dim);
       font-size: 1.1rem;
     }
+
+    
     nav {
       position: fixed;
       top: 0;
@@ -105,6 +107,8 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+
+   
     .hero {
       height: 100vh;
       display: flex;
@@ -139,6 +143,7 @@
     @keyframes blink {
       50% { border-color: transparent; }
     }
+
     .glass-card {
       background: var(--glass);
       backdrop-filter: blur(10px);
@@ -152,6 +157,8 @@
       border-color: var(--primary);
       transform: translateY(-5px);
     }
+
+  
     .skills-container {
       max-width: 800px;
     }
@@ -179,6 +186,8 @@
       width: 0;
       transition: width 1.5s ease-out;
     }
+
+   
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -189,6 +198,8 @@
       margin-bottom: 15px;
       color: var(--primary);
     }
+
+  
     .contact-content {
       text-align: center;
     }
@@ -228,6 +239,8 @@
       color: var(--text-dim);
       font-size: 0.9rem;
     }
+
+  
     @media (max-width: 992px) {
       .hero h1 { font-size: 3.5rem; }
       section { padding: 80px 5%; }
@@ -378,6 +391,7 @@
 </footer>
 
 <script>
+
   const roles = [
     "UI/UX Designer Intern @ ShadowFox",
     "B.Tech Information Technology Student",
@@ -415,7 +429,9 @@
     }
 
     setTimeout(typeEffect, nextActionSpeed);
-  
+  }
+
+ 
   const observerOptions = { threshold: 0.5 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -427,6 +443,8 @@
   }, observerOptions);
 
   document.querySelectorAll('.progress-fill').forEach(bar => observer.observe(bar));
+
+
   function toggleMenu() {
     const menu = document.getElementById("menu");
     const icon = document.getElementById("menuBtn");
@@ -439,5 +457,4 @@
 </script>
 
 </body>
-
 </html>
