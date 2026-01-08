@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dharani | UI/UX Designer Intern</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+  
+    :root {
+      --primary: #00e6e6;
+      --primary-dark: #00b3b3;
+      --bg-dark: #0a0f12;
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f0f0f0;
+      --text-dim: #b0b0b0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 230, 230, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(44, 83, 100, 0.1) 0%, transparent 40%);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 100px 10%;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    p {
+      line-height: 1.8;
+      color: var(--text-dim);
+      font-size: 1.1rem;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 10%;
+      background: rgba(10, 15, 18, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(15px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.3s;
+      opacity: 0.8;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+      opacity: 1;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: transparent;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -2px;
+    }
+
+    .typing-container {
+      font-size: 1.5rem;
+      color: var(--text-dim);
+      height: 1.5em;
+    }
+
+    #typing {
+      color: var(--primary);
+      font-weight: 600;
+      border-right: 2px solid var(--primary);
+      padding-right: 5px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .glass-card {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+      transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .glass-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+    .skills-container {
+      max-width: 800px;
+    }
+
+    .skill {
+      margin-bottom: 25px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .progress-bg {
+      background: rgba(255,255,255,0.05);
+      height: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+      width: 0;
+      transition: width 1.5s ease-out;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .box h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    .contact-content {
+      text-align: center;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .contact-icons a {
+      font-size: 2rem;
+      color: var(--text-main);
+      transition: 0.3s;
+      padding: 15px;
+      background: var(--glass);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--glass-border);
+    }
+
+    .contact-icons a:hover {
+      color: var(--primary);
+      transform: scale(1.1);
+      border-color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 992px) {
+      .hero h1 { font-size: 3.5rem; }
+      section { padding: 80px 5%; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 5%; }
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: #0f171a;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+      }
+      nav ul.active { right: 0; }
+      .menu-icon { display: block; z-index: 1001; }
+      .hero h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="logo">Dharani.</a>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars" id="menuBtn"></i>
+  </div>
+  <ul id="menu">
+    <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+    <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+    <li><a href="#internship" onclick="toggleMenu()">Internship</a></li>
+    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <p style="color: var(--primary); margin-bottom: 10px; font-weight: 600;">Hello, I am</p>
+  <h1>Naripeddi Dharani</h1>
+  <div class="typing-container">
+    <span id="typing"></span>
+  </div>
+</section>
+
+<section id="about">
+  <div class="glass-card">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate <strong>B.Tech Information Technology</strong> student with a deep-rooted interest in the intersection of aesthetics and functionality. 
+      <br><br>
+      As a <strong>UI/UX Designer Intern at ShadowFox</strong>, I specialize in crafting digital experiences that are not only visually striking but intuitively usable. My goal is to bridge the gap between user needs and technical constraints through thoughtful design systems and responsive architecture.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Arsenal</h2>
+  <div class="skills-container">
+    <div class="skill">
+      <div class="skill-info">
+        <span>Frontend Development (HTML, CSS, JS)</span>
+        <span>90%</span>
+      </div>
+      <div class="progress-bg"><div class="progress-fill" data-level="90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-info">
+        <span>UI/UX Design & Prototyping</span>
+        <span>85%</span>
+      </div>
+      <div class="progress-bg"><div class="progress-fill" data-level="85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-info">
+        <span>Problem Solving (Python & Java)</span>
+        <span>80%</span>
+      </div>
+      <div class="progress-bg"><div class="progress-fill" data-level="80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-info">
+        <span>Frameworks (Flask, Tailwind)</span>
+        <span>75%</span>
+      </div>
+      <div class="progress-bg"><div class="progress-fill" data-level="75%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Selected Works</h2>
+  <div class="grid">
+    <div class="glass-card box">
+      <h3>Expense Tracker</h3>
+      <p>A Python-powered financial utility featuring data visualization to help users categorize and monitor spending habits efficiently.</p>
+    </div>
+    <div class="glass-card box">
+      <h3>Multi-Lang Translator</h3>
+      <p>A clean, responsive web interface utilizing translation APIs to provide seamless cross-language communication.</p>
+    </div>
+    <div class="glass-card box">
+      <h3>College Chatbot</h3>
+      <p>An intelligent NLP assistant built with Flask to handle institutional queries, improving information accessibility for students.</p>
+    </div>
+  </div>
+</section>
+
+<section id="internship">
+  <div class="glass-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <h2 style="margin-bottom: 10px;">ShadowFox</h2>
+        <p style="color: var(--primary); font-weight: 600; margin-bottom: 20px;">UI/UX Designer Intern | Present</p>
+        <p>
+          Collaborating with the design team to iterate on user flows and high-fidelity mockups. 
+          Focusing on visual consistency, accessibility standards (WCAG), and creating modular 
+          component libraries for scalable web applications.
+        </p>
+      </div>
+      <div style="background: var(--primary); color: #000; padding: 10px 20px; border-radius: 50px; font-weight: bold; font-size: 0.8rem;">
+        INTERNSHIP
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-content">
+    <h2>Get In Touch</h2>
+    <p>Interested in collaborating or just want to say hi? Feel free to reach out!</p>
+    <div class="contact-icons">
+      <a href="mailto:24pa1a12f8@vishnu.edu.in" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Naripeddi Dharani. Handcrafted with passion.</p>
+</footer>
+
+<script>
+  const roles = [
+    "UI/UX Designer Intern @ ShadowFox",
+    "B.Tech Information Technology Student",
+    "Frontend Development Enthusiast",
+    "Creative Problem Solver"
+  ];
+
+  let i = 0, j = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const erasingSpeed = 50;
+  const pauseTime = 2000;
+
+  function typeEffect() {
+    const currentRole = roles[i];
+    const displayElement = document.getElementById("typing");
+
+    if (isDeleting) {
+      displayElement.textContent = currentRole.substring(0, j - 1);
+      j--;
+    } else {
+      displayElement.textContent = currentRole.substring(0, j + 1);
+      j++;
+    }
+
+    let nextActionSpeed = isDeleting ? erasingSpeed : typingSpeed;
+
+    if (!isDeleting && j === currentRole.length) {
+      isDeleting = true;
+      nextActionSpeed = pauseTime;
+    } else if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % roles.length;
+      nextActionSpeed = 500;
+    }
+
+    setTimeout(typeEffect, nextActionSpeed);
+  
+  const observerOptions = { threshold: 0.5 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        bar.style.width = bar.getAttribute('data-level');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.progress-fill').forEach(bar => observer.observe(bar));
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    const icon = document.getElementById("menuBtn");
+    menu.classList.toggle("active");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  }
+
+  window.onload = typeEffect;
+</script>
+
+</body>
+</html>
