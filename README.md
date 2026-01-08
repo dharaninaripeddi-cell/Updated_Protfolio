@@ -1,9 +1,13 @@
 Responsive Portfolio Website – UI/UX Upgrade
+
+
 📌 Project Overview
 
 This project focuses on upgrading the responsive design of an existing personal portfolio website to ensure optimal usability and visual consistency across desktop, tablet, and mobile devices.
 
 The website was enhanced using responsive web design principles while maintaining a clean, modern, and visually pleasing UI aligned with UI/UX best practices.
+
+
 
 🎯 Task Objective
 
@@ -14,6 +18,8 @@ Enhance navigation usability on mobile devices
 Maintain consistent design and visual hierarchy
 
 Ensure smooth user experience across browsers
+
+
 
 🛠️ Technologies Used
 
@@ -26,6 +32,8 @@ JavaScript – Mobile navigation toggle and small interactions
 Font Awesome – Icons for better visual clarity
 
 ⚠️ No frameworks (Bootstrap, Tailwind, React, etc.) were used.
+
+
 
 ✨ Key Improvements Implemented
 🔹 Responsive Layout
@@ -58,6 +66,8 @@ Used standard CSS properties supported across modern browsers.
 
 Tested layout responsiveness using browser developer tools.
 
+
+
 📱 Responsive Breakpoints
 
 The website is optimized for:
@@ -67,6 +77,8 @@ Mobile: ≤ 768px
 Tablet: 768px – 1024px
 
 Desktop: ≥ 1024px
+
+
 
 📂 Project Structure
 /project-folder
@@ -82,11 +94,15 @@ Open index.html in any modern web browser
 
 Resize the browser window or use DevTools to test responsiveness
 
+
+
 👤 Author
 
 Dharani
 UI/UX Designer Intern | ShadowFox
 B.Tech Information Technology Student
+
+
 
 📝 Conclusion
 
